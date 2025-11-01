@@ -81,7 +81,7 @@ class PromotionCRUD:
     @staticmethod
     async def delete_promotion(promotion_id: int):
         async with async_session_maker() as session:
-            promotion = await session.get(Schedule, promotion_id)
+            promotion = await session.get(Promotion, promotion_id)
             if promotion:
                 await session.delete(promotion)
                 await session.commit()
